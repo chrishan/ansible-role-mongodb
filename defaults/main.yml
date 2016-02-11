@@ -18,13 +18,13 @@ mongodb_daemon_name: "{{ 'mongod' if ('mongodb-org' in mongodb_package) else 'mo
 mongodb_conf_auth: false                          # Run with security
 mongodb_conf_bind_ip: 127.0.0.1                   # Comma separated list of ip addresses to listen on
 mongodb_conf_cpu: true                            # Periodically show cpu and iowait utilization
-mongodb_conf_dbpath: /data/db                     # Directory for datafiles
+mongodb_conf_dbpath: /mnt/mongodb                     # Directory for datafiles
 mongodb_conf_fork: false                          # Fork server process
 mongodb_conf_httpinterface: false                 # Enable http interface
 mongodb_conf_ipv6: false                          # Enable IPv6 support (disabled by default)
 mongodb_conf_journal: true                        # Enable journaling
 mongodb_conf_logappend: true                      # Append to logpath instead of over-writing
-mongodb_conf_logpath: /var/log/mongodb/{{ mongodb_daemon_name }}.log # Log file to send write to instead of stdout
+mongodb_conf_logpath: /mnt/mongodb/{{ mongodb_daemon_name }}.log # Log file to send write to instead of stdout
 mongodb_conf_maxConns: 1000000                    # Max number of simultaneous connections
 mongodb_conf_noprealloc: false                    # Disable data file preallocation
 mongodb_conf_smallfiles: false                    # Disable smallfiles option
